@@ -134,7 +134,7 @@ if not st.session_state.logged_in:
     # Right Column: The Input Forms Panel
     with col2:
         st.markdown('<h1 class="brand-title">nutrition<span>AI</span></h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Enter your workspace credentials to unlock tailored nutritional intelligence and analytics.</p>', unsafe_allow_html=True)
+        st.markdown('<p class="subtitle">Enter your name and enter the password.</p>', unsafe_allow_html=True)
         
         # Native interactive input widgets
         username = st.text_input("User ID", placeholder="admin")
