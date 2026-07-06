@@ -118,7 +118,7 @@ if not st.session_state.logged_in:
 
     # Build the white container card layout split into columns
     col1, col2 = st.columns([1, 1.1])
-    
+
     # Left Column: The Logo Artwork Panel
     with col1:
         st.markdown("""
@@ -134,12 +134,13 @@ if not st.session_state.logged_in:
     # Right Column: The Input Forms Panel
     with col2:
         st.markdown('<h1 class="brand-title">nutrition<span>AI</span></h1>', unsafe_allow_html=True)
+        st.markdown('<p class="subtitle">Enter your workspace credentials to unlock tailored nutritional intelligence and analytics.</p>', unsafe_allow_html=True)
         st.markdown('<p class="subtitle">Enter your name and enter the password.</p>', unsafe_allow_html=True)
-        
+
         # Native interactive input widgets
         username = st.text_input("User ID", placeholder="admin")
         password = st.text_input("Password", type="password", placeholder="••••••••")
-        
+
         # When clicked, this python button handles your redirect completely natively!
         if st.button("Sign In to Dashboard  →"):
             if username.strip() == "admin" and password.strip() == "nutrition2026":
@@ -1028,4 +1029,3 @@ if st.session_state.food_name and st.session_state.food_name != "No food detecte
                 answer = ask_vqa(user_q, st.session_state.food_name, st.session_state.chat_history)
             st.session_state.chat_history.append({"role": "user", "content": user_q})
             st.session_state.chat_history.append({"role": "assistant", "content": answer})
-            st.rerun()
